@@ -2,7 +2,7 @@
 
 In case of questions feel free to reach me out on [jirka@meiro.io](mailto:jirka@meiro.io)
 
-Your task will be to create SPA using React and other libraries of your choice including tests (coverage > 90%). We prepared API endpoints for you and UI design in Figma ([link](https://www.figma.com/file/T923VtGAxtxaXHOjZ98gF4/CDP-dev?node-id=0%3A1)). As you can see, the app consists of two pages (use React router):
+Your task will be to create SPA using React and other libraries of your choice. We prepared API endpoints for you and UI design in Figma ([link](https://www.figma.com/file/T923VtGAxtxaXHOjZ98gF4/CDP-dev?node-id=0%3A1)). As you can see, the app consists of two pages (use React router):
 
 - Customers list with search functionality
 - Customer detail
@@ -13,9 +13,13 @@ We'll focus on:
 
 - User experience
 - Clean and well structured code with re-usable components
-- Solution without bugs and covered by quality tests
+- Solution withou bugs and covered by quality tests
 
-We don't want you to make responsive version, **only desktop**.
+We don't want you to make responsive version, **only desktop** and **we'll not focus on CSS details**.
+
+### Unit tests
+
+We ask you to create unit tests for `Search` component on `Customer search` page and for `Group of events` on `Customer detail` page. **We don't want you to cover the whole solution by tests!**
 
 ## Assignment instructions
 
@@ -23,17 +27,15 @@ There's `assets` folder which includes source icons and customer avatars. Other 
 
 ### Customers list
 
-This will be the main screen of the application. When you first reach it, there will be only upper bar with `Customers search` title and search bar. Once you make some search (**even empty search is allowed to list all customers**), the table of results will be populated. Feel free to adjust column names by what you get in response, the design is not 1:1 precise.
+This will be the main screen of the application. When you first reach it, there will be only upper bar with `Customers search` title and search bar. Once you make some search (**even empty search is allowed to list all customers**), the table will be populated by results. Feel free to adjust column names by what you get in response, the design is not 1:1 precise. We don't want any kind of sorting functionality etc.
 
-You can click on customer avatar / id / right chevron icon to view his detail or you can additionaly load more customers.
+You can click on customer to view his detail or you can additionaly load more customers.
 
 ### Customer detail
 
 Here you can find additional information about your customers, especialy timeline of their events. At the top of the page there's `back button` followed by header bar which contains customer name and a list of sources. The greyed sources are these ones where customer doesn't have any event.
 
-There's a chart below, where you can find event occurencies for each source with `day` resolution.
-
-Finally, there's a timeline of events, which will be by default collapsed (if there're any expandable parts for some customer). It has again `day` resolution, which means you can group multiple events into expandable parts of the page and these events are hidden by default. You can toggle the groups by clicking on the `arrow` button on the right side of the group or you can toggle all groups of events on the page by clicking on the topper button - `show/hide all activities`. If there's only one event at a particular day, it's shown by default.
+Finally, there's a timeline of events, which will be by default collapsed (if there're any expandable parts for some customer). It has `day` resolution, which means you have to group multiple events into expandable parts of the page and these events are hidden by default. You can toggle the groups by clicking on the `arrow` button on the right side. If there's only one event at a particular day, it's shown by default.
 
 ## API reference
 
@@ -47,25 +49,25 @@ Returns a list of customers. Additionaly you can specifiy `offset`, `limit` and 
 
 ```
 {
-    customers: [
-        {
-            id: "powr948fadspof923902faspoaqewr",
-            name: "Pavel",
-            surname: "Sahanek",
-            created: "2020-10-11T12:22:22.123Z",
-          },
-          {
-            id: "p234we8fadspof923902faspoaqewr",
-            name: "Martin",
-            surname: "Kouba",
-            created: "2020-09-10T12:22:22.123Z",
-          }
-    ],
-    selection_settings: {
-        offset: 0,
-        limit: 20,
-        search: ""
+  customers: [
+    {
+      id: "powr948fadspof923902faspoaqewr",
+      name: "Pavel",
+      surname: "Sahanek",
+      created: "2020-10-11T12:22:22.123Z",
+    },
+    {
+      id: "p234we8fadspof923902faspoaqewr",
+      name: "Martin",
+      surname: "Kouba",
+      created: "2020-09-10T12:22:22.123Z",
     }
+  ],
+  selection_settings: {
+    offset: 0,
+    limit: 20,
+    search: ""
+  }
 }
 ```
 
@@ -77,12 +79,12 @@ Returns customer by id.
 
 ```
 {
-    customer: {
-        id: "powr948fadspof923902faspoaqewr",
-        name: "Pavel",
-        surname: "Sahanek",
-        created: "2020-10-11T12:22:22.123Z",
-    }
+  customer: {
+    id: "powr948fadspof923902faspoaqewr",
+    name: "Pavel",
+    surname: "Sahanek",
+    created: "2020-10-11T12:22:22.123Z",
+  }
 }
 ```
 
@@ -94,25 +96,18 @@ Returns customer events.
 
 ```
 {
-    customer_events: [
-        {
-            id: 2,
-            event_id: "website_ad_clicked",
-            datetime: "2020-10-18T12:22:33.123Z",
-            payload: {
-              add_name: "Macbook Pro",
-            },
-          },
-          {
-            id: 3,
-            event_id: "website_page_view",
-            datetime: "2020-10-19T20:22:33.123Z",
-            payload: {
-              title: "Customer Data Platform that helps you target precisely",
-              url: "https://www.meiro.io/",
-            },
-          }
-    ]
+  customer_events: [
+    {
+      id: 2,
+      event_id: "website_ad_clicked",
+      datetime: "2020-10-18T12:22:33.123Z"
+    },
+    {
+      id: 3,
+      event_id: "website_page_view",
+      datetime: "2020-10-19T20:22:33.123Z"
+    }
+  ]
 }
 ```
 
@@ -124,23 +119,23 @@ Returns events' sources.
 
 ```
 {
-    sources: [
+  sources: [
     {
-        id: "meiro_events",
-        name: "Meiro Events",
-        frontend_settings: {
-          icon: "meiro_events.png",
-          color: "#B85888",
-        },
+      id: "meiro_events",
+      name: "Meiro Events",
+      frontend_settings: {
+        icon: "meiro_events.png",
+        color: "#B85888",
       },
-      {
-        id: "mailchimp",
-        name: "Mailchimp",
-        frontend_settings: {
-          icon: "mailchimp.png",
-          color: "#FBB962",
-        }
+    },
+    {
+      id: "mailchimp",
+      name: "Mailchimp",
+      frontend_settings: {
+        icon: "mailchimp.png",
+        color: "#FBB962",
       }
+    }
   ]
 }
 ```
@@ -153,43 +148,19 @@ Returns events definitions.
 
 ```
 {
-    events: [
-        {
-            id: "website_ad_clicked",
-            source_id: "meiro_events",
-            icon: "hand-pointer",
-            title: "Customer clicked on website ad",
-            short_title: "Ad clicked",
-            display: [
-              {
-                title: "Ad name",
-                type: "string",
-                format: "p",
-                path: "add_name",
-              },
-            ],
-          },
-          {
-            id: "website_page_view",
-            source_id: "meiro_events",
-            icon: "eye",
-            title: "Customer visited website page",
-            short_title: "Page visited",
-            display: [
-              {
-                title: "Title",
-                type: "string",
-                format: "p",
-                path: "title",
-              },
-              {
-                title: "URL",
-                type: "string",
-                format: "ahref",
-                path: "url",
-              },
-            ],
-          }
-    ]
+  events: [
+    {
+      id: "website_ad_clicked",
+      source_id: "meiro_events",
+      title: "Customer clicked on website ad",
+      short_title: "Ad clicked"
+    },
+    {
+      id: "website_page_view",
+      source_id: "meiro_events",
+      title: "Customer visited website page",
+      short_title: "Page visited"
+    }
+  ]
 }
 ```
