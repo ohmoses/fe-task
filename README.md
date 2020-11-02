@@ -1,5 +1,7 @@
 # Assignment for FE adepts
 
+In case of questions feel free to reach me out on [jirka@meiro.io](mailto:jirka@meiro.io)
+
 Your task will be to create SPA using React and other libraries of your choice including tests (coverage > 90%). We prepared API endpoints for you and UI design in Figma ([link](https://www.figma.com/file/T923VtGAxtxaXHOjZ98gF4/CDP-dev?node-id=0%3A1)). As you can see, the app consists of two pages (use React router):
 
 - Customers list with search functionality
