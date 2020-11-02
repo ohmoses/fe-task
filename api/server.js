@@ -1,9 +1,11 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
 
 import db from "./db";
 
 const app = express();
+app.use(cors());
 
 // Parse incoming requests data
 app.use(bodyParser.json());
@@ -48,6 +50,7 @@ app.get("/customers", (req, res) => {
     selection_settings: {
       offset,
       limit,
+      search,
     },
   });
 });
