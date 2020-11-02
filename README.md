@@ -15,7 +15,7 @@ We'll focus on:
 - Clean and well structured code with re-usable components
 - Solution withou bugs and covered by quality tests
 
-We don't want you to make responsive version, **only desktop** and **we'll not focus on CSS details**.
+We don't want you to make responsive version, **only desktop**.
 
 ### Unit tests
 
