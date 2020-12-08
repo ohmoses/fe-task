@@ -1,0 +1,124 @@
+.container {
+  margin-bottom: 20px;
+}
+
+.mainCard {
+  padding: 25px;
+  align-items: center;
+  position: relative;
+  display: flex;
+}
+
+.eventSummaryWrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.eventSummary {
+  display: flex;
+  align-items: center;
+  margin: 10px 20px 10px 0;
+}
+
+.eventTitle {
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.eventSource {
+  color: var(--text-color-very-light);
+}
+
+.buttonWrapper {
+  height: 48px;
+  width: 48px;
+  position: relative;
+}
+
+.toggleButton {
+  border: var(--border);
+  border-radius: 8px;
+  color: var(--text-color-light);
+  font-weight: 700;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.1s;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.toggleButton:hover {
+  background-color: #f5f5f5;
+}
+
+.toggleIcon {
+  transition: all 0.1s;
+}
+
+.toggleIcon.flipped {
+  transform: scaleY(-1);
+}
+
+.eventCount {
+  position: absolute;
+  border: var(--border);
+  background-color: white;
+  border-radius: 50%;
+  padding: 3px;
+  min-width: 20px;
+  height: 20px;
+  font-size: 10px;
+  color: var(--text-color-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: -6px;
+  bottom: -6px;
+}
+
+.summaryDate {
+  position: absolute;
+  color: var(--text-color-very-light);
+  font-size: 14px;
+  right: 25px;
+  top: 10px;
+}
+
+.detailCard {
+  padding: 12px 15px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.eventDescription {
+  display: flex;
+  font-weight: 700;
+  font-size: 14px;
+  align-items: center;
+  flex: 1;
+}
+
+.icon {
+  margin-right: 6px;
+}
+
+.date {
+  color: var(--text-color-very-light);
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.expandingContainer {
+  max-height: 0;
+  overflow-y: hidden;
+  transition: max-height 0.1s linear;
+}

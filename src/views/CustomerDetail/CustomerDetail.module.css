@@ -1,0 +1,77 @@
+.container {
+  max-width: var(--view-max-width);
+  margin: 40px auto 40px auto;
+}
+
+.backLinkWrapper {
+  margin-bottom: 20px;
+}
+
+.backLinkWrapper a {
+  color: var(--text-color-very-light);
+  font-weight: 700;
+  transition: all 0.1s;
+}
+
+.backLinkWrapper a:hover {
+  color: var(--text-color-light);
+}
+
+.topBar {
+  height: var(--top-bar-height);
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0 20px;
+  white-space: nowrap;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: "Lato", sans-serif;
+}
+
+.sourcesWrapper {
+  display: flex;
+}
+
+.source {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.source.disabled {
+  opacity: 0.5;
+}
+
+.sourceIconWrapper {
+  margin: 5px;
+}
+
+.timelineWrapper {
+  max-width: 550px;
+  margin: 15px auto 40px auto;
+  position: relative;
+}
+
+.midLine {
+  border-left: var(--border);
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  height: calc(100% - 20px);
+  top: 10px;
+  left: 50%;
+}

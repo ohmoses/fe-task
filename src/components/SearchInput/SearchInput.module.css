@@ -1,0 +1,37 @@
+.container {
+  background-color: white;
+  border: var(--border);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  margin: 4px 15px;
+  align-self: stretch;
+  font-size: 16px;
+}
+
+.button {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 14px;
+  width: 44px;
+  height: 44px;
+  margin: 4px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.button:hover {
+  background-color: var(--color-primary-darker);
+}

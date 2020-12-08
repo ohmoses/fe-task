@@ -1,0 +1,14 @@
+:root {
+  --text-color: rgb(34, 34, 34);
+  --text-color-light: rgba(34, 34, 34, 0.6);
+  --text-color-very-light: rgba(34, 34, 34, 0.45);
+
+  --view-max-width: 1200px;
+  --top-bar-height: 80px;
+
+  --border: 1px solid #cccccc;
+
+  --color-primary: rgb(254, 127, 102);
+  --color-primary-darker: rgb(254, 115, 88);
+  --color-primary-hint: rgba(254, 127, 102, 0.05);
+}

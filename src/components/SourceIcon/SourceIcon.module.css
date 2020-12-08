@@ -1,0 +1,14 @@
+.img {
+  width: 40px;
+  height: 40px;
+}
+
+.img.small {
+  width: 20px;
+  height: 20px;
+}
+
+.img.disabled {
+  filter: grayscale(100%);
+  opacity: 0.5;
+}

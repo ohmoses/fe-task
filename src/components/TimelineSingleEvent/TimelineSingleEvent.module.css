@@ -1,0 +1,23 @@
+.container {
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.eventDescription {
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  flex: 1;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.date {
+  color: var(--text-color-very-light);
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}

@@ -1,0 +1,23 @@
+@import-normalize;
+@import "vars.css";
+
+body {
+  background-color: #eaeef1;
+  color: var(--text-color);
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+button,
+input {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

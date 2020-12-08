@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.errorMessage {
+  background-color: #ffcdd2;
+  color: #c62828;
+  padding: 4px 6px;
+  margin: 6px;
+}
